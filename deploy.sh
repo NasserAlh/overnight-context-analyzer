@@ -13,7 +13,7 @@ YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
 # Configuration
-PROJECT_NAME="motivewave-studies"
+PROJECT_NAME="overnight-context-analyzer"
 MOTIVEWAVE_DIR="/mnt/c/Users/$(whoami)/MotiveWave Extensions"
 TARGET_DIR="target"
 
@@ -76,7 +76,7 @@ fi
 
 # Step 3: Generate timestamp and create new filename
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
-ORIGINAL_JAR="$TARGET_DIR/$PROJECT_NAME-1.0-SNAPSHOT.jar"
+ORIGINAL_JAR="$TARGET_DIR/$PROJECT_NAME-1.0.0.jar"
 TIMESTAMPED_JAR="$TARGET_DIR/$PROJECT_NAME-$TIMESTAMP.jar"
 
 # Check if original JAR exists
@@ -137,7 +137,7 @@ echo ""
 
 # Step 9: List studies in the JAR
 print_step "Studies included in this build:"
-jar -tf "$TIMESTAMPED_JAR" | grep '\.class$' | grep -v '\$' | sed 's|/|.|g' | sed 's|\.class$||' | grep '^com\.nasser\.' | sed 's|^com\.nasser\.||' | sort
+jar -tf "$TIMESTAMPED_JAR" | grep '\.class$' | grep -v '\$' | sed 's|/|.|g' | sed 's|\.class$||' | grep '^com\.tradingtools\.' | sed 's|^com\.tradingtools\.||' | sort
 echo ""
 
 # Step 10: Final instructions
