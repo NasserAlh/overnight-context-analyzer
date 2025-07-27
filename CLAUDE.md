@@ -20,7 +20,10 @@ mvn test
 mvn package
 
 # Deploy to MotiveWave (WSL environment)
-cp target/overnight-context-analyzer-1.0.0.jar /mnt/c/MotiveWave/plugins/
+cp target/overnight-context-analyzer-1.0.0.jar "/mnt/c/Users/$(whoami)/MotiveWave Extensions/"
+
+# Deploy with timestamp (using existing script)
+./deploy.sh
 ```
 
 ### Development Environment
